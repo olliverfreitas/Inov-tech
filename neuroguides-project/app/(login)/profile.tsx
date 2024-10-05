@@ -1,7 +1,7 @@
 import {View, SafeAreaView, Text, Image, StyleSheet, StatusBar, Pressable} from 'react-native';
-import {Button} from '../components/button';
+import {Button} from '../../components/button';
 
-export default function App(){
+const Profile=()=>{
 
   function profImg(){
     alert('Perfil em construção...')
@@ -134,3 +134,5 @@ const styles = StyleSheet.create({
   
 
 })
+
+export default Profile;

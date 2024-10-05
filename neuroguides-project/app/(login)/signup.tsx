@@ -1,10 +1,10 @@
 import {View, SafeAreaView, Image, StyleSheet, Text, StatusBar} from 'react-native';
-import {Button} from '../components/button';
-import {Input} from '../components/input';
+import {Button} from '../../components/button';
+import {Input} from '../../components/input';
 import {useState} from 'react';
 import { Picker } from '@react-native-picker/picker';
 
-export default function App(){
+ const Signup=()=>{
 
     const [theSelectedValue, setTheSelectedValue] = useState('');
 
@@ -100,3 +100,5 @@ const styles = StyleSheet.create({
     padding: 0
   }
 })
+
+export default Signup;

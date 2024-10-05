@@ -1,10 +1,10 @@
 import {View, SafeAreaView, Image, StyleSheet, Text, TextInput, StatusBar} from 'react-native';
-import {Button} from '../components/button';
+import {Button} from '../../components/button';
 import {useState} from 'react';
 import {Link} from 'expo-router';
-import {Input} from '../components/input';
+import {Input} from '../../components/input';
 
-export default function App(){
+const Login=()=>{
 
     const [inputText, setInputText] = useState("");
 
@@ -119,3 +119,5 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline'
   }
 })
+
+export default Login;

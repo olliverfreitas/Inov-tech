@@ -1,17 +1,20 @@
 import {Pressable, Text, StyleSheet} from 'react-native';
-import {Link} from 'expo-router';
+import {router} from 'expo-router';
 
 type Props={
   buttonlink: string;
 }
 
 export const Button = (props:Props) => {
+
+  function goToScreen(){
+    router.navigate(props.buttonlink)
+  }
+  
   return (
-    <Link href={props.buttonlink} asChild>
       <Pressable style={styles.button}>
        <Text style={styles.buttonText}>Entrar</Text> 
       </Pressable>
-    </Link>
   )
 }
 

@@ -1,7 +1,7 @@
 import {View, SafeAreaView, Image, Text, StyleSheet, Pressable, StatusBar} from 'react-native';
-import {Button} from '../components/button';
+import {Button} from '../../components/button';
 
-export default function App() {
+const MedicalReport=()=> {
 
   function uploadImage(){
     alert('Em construção...')
@@ -103,3 +103,5 @@ const styles = StyleSheet.create({
     width: 40
   }
 })
+
+export default MedicalReport;
