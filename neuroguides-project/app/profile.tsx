@@ -1,7 +1,8 @@
 import {View, SafeAreaView, Text, Image, StyleSheet, StatusBar, Pressable} from 'react-native';
-import {Button} from '../../components/button';
 
-const Profile=()=>{
+import {Link} from 'expo-router';
+
+export default function Profile(){
 
   function profImg(){
     alert('Perfil em construção...')
@@ -11,7 +12,7 @@ const Profile=()=>{
   }
 
   return (
-    <View style={styles.window}>
+    
       <SafeAreaView style={styles.container}>
         <Image
         source={require('../assets/bgng.jpg')}
@@ -40,21 +41,20 @@ const Profile=()=>{
 
           <View style={styles.loadCircle}></View>
 
-          <Button buttonlink='/medicalreport'/>
+          <Link href='/medicalreport' asChild>
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Entrar</Text> 
+          </Pressable>
+          </Link>
           
         </View>
         
       </SafeAreaView>
-    </View>
   )
 }
 
 const styles = StyleSheet.create({
-  window:{
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#ffff00'
-  },
+
   container:{
     width: '100%',
     height: '100%',
@@ -129,10 +129,20 @@ const styles = StyleSheet.create({
     borderBottomColor: '#D3D3D3',
     borderRadius: 25,
     marginBottom: 20
+  },
+  button:{
+    width: 246,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#d3d3d3',
+    borderWidth: 2,
+    borderRadius: 8,
+    marginBottom: 20
+  },
+  buttonText:{
+    fontSize: 18
   }
-
   
 
 })
-
-export default Profile;

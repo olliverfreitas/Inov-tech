@@ -1,14 +1,15 @@
 import {View, SafeAreaView, Image, Text, StyleSheet, Pressable, StatusBar} from 'react-native';
-import {Button} from '../../components/button';
 
-const MedicalReport=()=> {
+import {Link} from 'expo-router'
+
+export default function Medicalreport(){
 
   function uploadImage(){
     alert('Em construção...')
   }
 
   return (
-    <View style={styles.window}>
+    
       <SafeAreaView style={styles.container}>
 
       <Image
@@ -33,20 +34,19 @@ const MedicalReport=()=> {
             style={styles.folderImg} />
           </Pressable>
 
-          <Button buttonlink='/'/>
+          <Link href='/login' asChild>
+        <Pressable style={styles.button}>
+          <Text style={styles.buttonText}>Entrar</Text> 
+        </Pressable>
+    </Link>
 
         </View>
       </SafeAreaView>
-    </View>
   )
 }
 
 const styles = StyleSheet.create({
-  window:{
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#ffff00'
-  },
+  
   container:{
     width: '100%',
     height: '100%',
@@ -101,7 +101,18 @@ const styles = StyleSheet.create({
   folderImg:{
     height: 40,
     width: 40
-  }
+  },
+  button:{
+    width: 246,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#d3d3d3',
+    borderWidth: 2,
+    borderRadius: 8,
+    marginBottom: 20
+  },
+  buttonText:{
+    fontSize: 18
+}
 })
-
-export default MedicalReport;

@@ -1,15 +1,14 @@
-import {View, SafeAreaView, Image, StyleSheet, Text, TextInput, StatusBar} from 'react-native';
-import {Button} from '../../components/button';
+import {View, SafeAreaView, Image, StyleSheet, Pressable, Text, TextInput, StatusBar} from 'react-native';
 import {useState} from 'react';
 import {Link} from 'expo-router';
-import {Input} from '../../components/input';
+import {Input} from '../components/input';
 
-const Login=()=>{
+export default function Login(){
 
     const [inputText, setInputText] = useState("");
 
   return (
-    <View style={styles.window}>
+    
       <SafeAreaView style={styles.container}>
 
       <Image source={require('../assets/bgng.jpg')}
@@ -34,26 +33,20 @@ const Login=()=>{
                 </Link>
             </View>
 
-            <Button buttonlink='/'/>
-
-            <Link href="/signup" asChild>
-                <Text style={styles.signupTxt}>Cadastre aqui.</Text>
+            <Link href='/signup' asChild>
+                <Pressable style={styles.button}>
+                  <Text style={styles.buttonText}>Entrar</Text> 
+                </Pressable>
             </Link>
 
-
-
+        
         </View>
       </SafeAreaView>
-    </View>
   )
 }
 
 const styles = StyleSheet.create({
-  window:{
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#FFFFFF'
-  },
+  
   container:{
     width: '100%',
     height: '100%',
@@ -117,7 +110,18 @@ const styles = StyleSheet.create({
   signupTxt:{
     fontSize: 16,
     textDecorationLine: 'underline'
+  },
+  button:{
+    width: 246,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#d3d3d3',
+    borderWidth: 2,
+    borderRadius: 8,
+    marginBottom: 20
+  },
+  buttonText:{
+    fontSize: 18
   }
 })
-
-export default Login;

@@ -1,15 +1,16 @@
-import {View, SafeAreaView, Image, StyleSheet, Text, StatusBar} from 'react-native';
-import {Button} from '../../components/button';
-import {Input} from '../../components/input';
+import {View, SafeAreaView, Image, StyleSheet, Pressable, Text, StatusBar} from 'react-native';
+import {Input} from '../components/input';
 import {useState} from 'react';
 import { Picker } from '@react-native-picker/picker';
 
- const Signup=()=>{
+import {Link} from 'expo-router';
+
+ export default function Signup(){
 
     const [theSelectedValue, setTheSelectedValue] = useState('');
 
   return (
-    <View style={styles.window}>
+    
       <SafeAreaView style={styles.container}>
 
       <Image source={require('../assets/bgng.jpg')}
@@ -41,11 +42,14 @@ import { Picker } from '@react-native-picker/picker';
      
     </View>
 
-          <Button buttonlink='/profile'/>
+    <Link href='/profile' asChild>
+        <Pressable style={styles.button}>
+          <Text style={styles.buttonText}>Entrar</Text> 
+        </Pressable>
+    </Link>
         
         </View>
       </SafeAreaView>
-    </View>
   )
 }
 
@@ -98,7 +102,19 @@ const styles = StyleSheet.create({
     borderColor: '#d3d3d3',
     borderRadius: 18,
     padding: 0
+  },
+  button:{
+    width: 246,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderColor: '#d3d3d3',
+    borderWidth: 2,
+    borderRadius: 8,
+    marginBottom: 20
+  },
+  buttonText:{
+    fontSize: 18
   }
-})
 
-export default Signup;
+})
