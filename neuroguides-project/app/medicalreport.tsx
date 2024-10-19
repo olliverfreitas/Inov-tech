@@ -34,7 +34,7 @@ export default function Medicalreport(){
             style={styles.folderImg} />
           </Pressable>
 
-          <Link href='/login' asChild>
+          <Link href='/' asChild>
         <Pressable style={styles.button}>
           <Text style={styles.buttonText}>Entrar</Text> 
         </Pressable>
@@ -80,8 +80,7 @@ const styles = StyleSheet.create({
   },
   infoText: {
     textAlign: 'center',
-    fontSize: 15,
-    fontWeight: 600
+    fontSize: 15
   },
   uploadButton:{
     height: 60,
@@ -95,8 +94,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#666666'
   },
   upTtile:{
-    fontSize: 17,
-    fontWeight: 600
+    fontSize: 17
   },
   folderImg:{
     height: 40,

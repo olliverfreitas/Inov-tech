@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
   },
   profileText:{
     fontSize: 18,
-    fontWeight: 500,
     marginBottom: 20
   },
   profileImageArea:{

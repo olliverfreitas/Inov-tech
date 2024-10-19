@@ -80,8 +80,7 @@ const styles = StyleSheet.create({
   },
   welcomeText:{
     fontSize: 18,
-    marginBottom: 20,
-    fontWeight: 600
+    marginBottom: 20
   },
   inputBoxArea:{
     marginBottom: 20
