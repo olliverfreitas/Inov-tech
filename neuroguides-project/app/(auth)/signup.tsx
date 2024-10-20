@@ -1,5 +1,5 @@
 import {View, SafeAreaView, Image, StyleSheet, Pressable, Text, StatusBar} from 'react-native';
-import {Input} from '../components/input';
+import {Input} from '../../components/input';
 import {useState} from 'react';
 import { Picker } from '@react-native-picker/picker';
 
@@ -13,7 +13,7 @@ import {Link} from 'expo-router';
     
       <SafeAreaView style={styles.container}>
 
-      <Image source={require('../assets/bgng.jpg')}
+      <Image source={require('../../assets/bgng.jpg')}
       resizeMode='cover'
       style={styles.backgroundImage}
       />
@@ -90,7 +90,6 @@ const styles = StyleSheet.create({
   },
   picker: {
     width: 260,
-    height: 30,
     padding: 5
   },
   pickerText:{
@@ -100,8 +99,9 @@ const styles = StyleSheet.create({
   pickerBox:{
     borderWidth: 2,
     borderColor: '#d3d3d3',
-    borderRadius: 18,
-    padding: 0
+    borderRadius: 12,
+    padding: 0,
+    height: 60
   },
   button:{
     width: 246,

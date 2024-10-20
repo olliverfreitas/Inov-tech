@@ -1,7 +1,7 @@
 import {View, SafeAreaView, Image, StyleSheet, Pressable, Text, TextInput, StatusBar} from 'react-native';
 import {useState} from 'react';
 import {Link} from 'expo-router';
-import {Input} from '../components/input';
+import {Input} from '../../components/input';
 
 export default function Login(){
 
@@ -11,14 +11,14 @@ export default function Login(){
     
       <SafeAreaView style={styles.container}>
 
-      <Image source={require('../assets/bgng.jpg')}
+      <Image source={require('../../assets/bgng.jpg')}
       resizeMode='cover'
       style={styles.backgroundImage}
       />
 
         <View style={styles.loginContainer}>
             <Image
-            source={require('../assets/neuroguides-logo.jpg')} 
+            source={require('../../assets/neuroguides-logo.jpg')} 
             resizeMode='cover'
             style={styles.ngLogo}
             /> 
@@ -28,18 +28,21 @@ export default function Login(){
             <Input inputname="Senha:"/>
 
             <View style={styles.forgotTextBox}>
-                <Link href='/signup' asChild>
+                <Link href='/' asChild>
                     <Text style={styles.forgotText}>Esqueci a senha.</Text>
                 </Link>
             </View>
 
-            <Link href='/signup' asChild>
+            <Link href='/(tabs)' asChild>
                 <Pressable style={styles.button}>
                   <Text style={styles.buttonText}>Entrar</Text> 
                 </Pressable>
             </Link>
 
-        
+            <Link href='/signup' asChild>
+                    <Text style={styles.signupTxt}>Cadastre-se aqui.</Text>
+                </Link>
+
         </View>
       </SafeAreaView>
   )
@@ -107,8 +110,9 @@ const styles = StyleSheet.create({
     left: 0 
   },
   signupTxt:{
-    fontSize: 16,
-    textDecorationLine: 'underline'
+    fontSize: 18,
+    textDecorationLine: 'underline',
+    color: '#0047AB'
   },
   button:{
     width: 246,

@@ -13,7 +13,7 @@ export default function Medicalreport(){
       <SafeAreaView style={styles.container}>
 
       <Image
-      source={require('../assets/bgng.jpg')}
+      source={require('../../assets/bgng.jpg')}
       resizeMode='cover'
       style={styles.bgngImg} />
 
@@ -29,12 +29,12 @@ export default function Medicalreport(){
               <Text style={styles.upTtile}>Arquivo...</Text>
             </View>
             <Image 
-            source={require('../assets/folder-icon.png')}
+            source={require('../../assets/folder-icon.png')}
             resizeMode='cover'
             style={styles.folderImg} />
           </Pressable>
 
-          <Link href='/' asChild>
+          <Link href='/(tabs)' asChild>
         <Pressable style={styles.button}>
           <Text style={styles.buttonText}>Entrar</Text> 
         </Pressable>

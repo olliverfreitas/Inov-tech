@@ -3,11 +3,11 @@ import React from 'react'
 
 export default function RootLayout(){
     return(
-        <Stack>
-            <Stack.Screen name="index" />
-            <Stack.Screen name="signup" />
-            <Stack.Screen name="profile" />
-            <Stack.Screen name="medicalreport" />
+        <Stack screenOptions={{
+            headerShown: false
+        }}>
+            <Stack.Screen name="(auth)" />
+            <Stack.Screen name="(tabs)" />
         </Stack>
     )
 }

@@ -15,7 +15,7 @@ export default function Profile(){
     
       <SafeAreaView style={styles.container}>
         <Image
-        source={require('../assets/bgng.jpg')}
+        source={require('../../assets/bgng.jpg')}
         resizeMode='cover'
         style={styles.bgngImg}
         />
@@ -25,7 +25,7 @@ export default function Profile(){
 
           <Pressable style={styles.profileImageArea} onPress={profImg}>
             <Image 
-            source={require('../assets/account-circle-2.png')}
+            source={require('../../assets/account-circle-2.png')}
             resizeMode='cover'
             style={styles.profileImg}
             />
@@ -33,7 +33,7 @@ export default function Profile(){
 
           <Pressable style={styles.editArea} onPress={editImg}>
            <Image
-           source={require('../assets/edit-icon-9.png')} 
+           source={require('../../assets/edit-icon-9.png')} 
            resizeMode='cover'
            style={styles.editImg}
            />
