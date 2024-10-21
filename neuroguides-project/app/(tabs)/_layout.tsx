@@ -22,7 +22,7 @@ export default function TabsLayout(){
                 name="activities"
                 options={{
                     title: '',
-                    tabBarIcon: ({color}) => <FontAwesome size={32} name="tasks" color="#FFD59A" />
+                    tabBarIcon: ({color}) => <FontAwesome size={32} name="tasks" color="#FDCB76" />
                 }}
             />
             <Tabs.Screen 

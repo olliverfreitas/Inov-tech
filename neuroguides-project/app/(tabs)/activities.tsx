@@ -11,7 +11,7 @@ export default function Activities(){
                 headerTitle: 'ATIVIDADES',
                 headerTitleAlign: 'center',
                 headerTintColor: '#FFFFFF',
-                headerStyle: {backgroundColor: '#FFD59A'},
+                headerStyle: {backgroundColor: '#FDCB76'},
                 headerLeft: ()=> (
                     <Link href="/" asChild>
                         <FontAwesome size={30} name="commenting-o" color="#FFFFFF" style={{marginLeft: 20}} />
