@@ -1,6 +1,9 @@
 import {View, SafeAreaView, Text, Pressable, Image, StatusBar, StyleSheet} from 'react-native';
 import Map, {Callout, Marker} from 'react-native-maps';
 
+import {Tabs, Link} from 'expo-router';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+
 const coordinates = {
     latitude: -3.0969031,
     longitude: -60.0256756
@@ -9,6 +12,24 @@ const coordinates = {
 export default function MapScreen(){
     return (
             <SafeAreaView style={styles.mapContainer}>
+
+                <Tabs.Screen options={{
+                    headerTitle: 'MAPA',
+                    headerTitleAlign: 'center',
+                    headerTintColor: '#FFFFFF',
+                    headerStyle: {backgroundColor: '#67D0A9'},
+                    headerLeft: ()=> (
+                        <Link href="/" asChild>
+                            <FontAwesome size={30} name="commenting-o" color="#FFFFFF" style={{marginLeft: 20}} />
+                        </Link>
+                    ),
+                    headerRight: ()=> (
+                        <Link href="/" asChild>
+                            <FontAwesome size={30} name="user-o" color="#FFFFFF" style={{marginRight: 20}} />
+                        </Link>
+                    )
+                }} />
+
                     <Map style={StyleSheet.absoluteFill}
                         initialRegion={{
                             latitude: coordinates.latitude,

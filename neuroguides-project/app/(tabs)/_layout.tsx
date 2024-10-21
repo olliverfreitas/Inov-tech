@@ -22,14 +22,14 @@ export default function TabsLayout(){
                 name="activities"
                 options={{
                     title: '',
-                    tabBarIcon: ({color}) => <FontAwesome size={32} name="tasks" color="#FFFF99" />
+                    tabBarIcon: ({color}) => <FontAwesome size={32} name="tasks" color="#FFD59A" />
                 }}
             />
             <Tabs.Screen 
                 name="profesionals"
                 options={{
                     title: '',
-                    tabBarIcon: ({color}) => <FontAwesome size={32} name="map-marker" color="#00FFFF" />
+                    tabBarIcon: ({color}) => <FontAwesome size={32} name="group" color="#5D9CEC" />
                 }}
             />
 
