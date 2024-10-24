@@ -23,7 +23,7 @@ export default function ProfileScreens(){
                 options={{
                     title:'',
                     headerLeft: ()=>(
-                        <Link href="/profile">
+                        <Link href="/">
                             <FontAwesome size={20} name="chevron-left" color="#000000" />
                         </Link>
                     )

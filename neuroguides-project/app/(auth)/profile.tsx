@@ -1,4 +1,4 @@
-import {View, SafeAreaView, Text, Image, StyleSheet, StatusBar, Pressable} from 'react-native';
+import {View, SafeAreaView, Text, Image, StyleSheet, StatusBar, TouchableOpacity} from 'react-native';
 
 import {Link} from 'expo-router';
 
@@ -23,28 +23,28 @@ export default function Profile(){
 
           <Text style={styles.profileText}>Insira uma foto de perfil.</Text>
 
-          <Pressable style={styles.profileImageArea} onPress={profImg}>
+          <TouchableOpacity style={styles.profileImageArea} onPress={profImg}>
             <Image 
             source={require('../../assets/account-circle-2.png')}
             resizeMode='cover'
             style={styles.profileImg}
             />
-          </Pressable>
+          </TouchableOpacity>
 
-          <Pressable style={styles.editArea} onPress={editImg}>
+          <TouchableOpacity style={styles.editArea} onPress={editImg}>
            <Image
            source={require('../../assets/edit-icon-9.png')} 
            resizeMode='cover'
            style={styles.editImg}
            />
-          </Pressable>
+          </TouchableOpacity>
 
           <View style={styles.loadCircle}></View>
 
           <Link href='/medicalreport' asChild>
-          <Pressable style={styles.button}>
+          <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Entrar</Text> 
-          </Pressable>
+          </TouchableOpacity>
           </Link>
           
         </View>

@@ -1,4 +1,4 @@
-import {View, SafeAreaView, Image, StyleSheet, Pressable, Text, TextInput, StatusBar} from 'react-native';
+import {View, SafeAreaView, Image, StyleSheet, TouchableOpacity, Text, TextInput, StatusBar} from 'react-native';
 import {useState} from 'react';
 import {Link} from 'expo-router';
 import {Input} from '../../components/input';
@@ -34,9 +34,9 @@ export default function Login(){
             </View>
 
             <Link href='/(tabs)' asChild>
-                <Pressable style={styles.button}>
+                <TouchableOpacity style={styles.button}>
                   <Text style={styles.buttonText}>Entrar</Text> 
-                </Pressable>
+                </TouchableOpacity>
             </Link>
 
             <Link href='/signup' asChild>

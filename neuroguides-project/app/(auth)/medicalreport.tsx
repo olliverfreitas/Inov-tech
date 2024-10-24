@@ -1,4 +1,4 @@
-import {View, SafeAreaView, Image, Text, StyleSheet, Pressable, StatusBar} from 'react-native';
+import {View, SafeAreaView, Image, Text, StyleSheet, StatusBar, TouchableOpacity} from 'react-native';
 
 import {Link} from 'expo-router'
 
@@ -23,7 +23,7 @@ export default function Medicalreport(){
             <Text style={styles.infoText}>Por favor, caro paciente/profissional, faça o upload do seu laudo ou certificado.</Text>
           </View>
 
-          <Pressable style={styles.uploadButton} onPress={uploadImage}>
+          <TouchableOpacity style={styles.uploadButton} onPress={uploadImage}>
             <View>
               <Text>Arquivo em PDF</Text>
               <Text style={styles.upTtile}>Arquivo...</Text>
@@ -32,12 +32,12 @@ export default function Medicalreport(){
             source={require('../../assets/folder-icon.png')}
             resizeMode='cover'
             style={styles.folderImg} />
-          </Pressable>
+          </TouchableOpacity>
 
           <Link href='/(tabs)' asChild>
-        <Pressable style={styles.button}>
+        <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Entrar</Text> 
-        </Pressable>
+        </TouchableOpacity>
     </Link>
 
         </View>

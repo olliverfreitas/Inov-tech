@@ -1,4 +1,4 @@
-import {View, SafeAreaView, Image, StyleSheet, Pressable, Text, StatusBar} from 'react-native';
+import {View, SafeAreaView, Image, StyleSheet, TouchableOpacity, Text, StatusBar} from 'react-native';
 import {Input} from '../../components/input';
 import {useState} from 'react';
 import { Picker } from '@react-native-picker/picker';
@@ -43,9 +43,9 @@ import {Link} from 'expo-router';
     </View>
 
     <Link href='/profile' asChild>
-        <Pressable style={styles.button}>
+        <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Entrar</Text> 
-        </Pressable>
+        </TouchableOpacity>
     </Link>
         
         </View>
