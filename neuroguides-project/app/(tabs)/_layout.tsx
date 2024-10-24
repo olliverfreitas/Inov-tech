@@ -1,9 +1,23 @@
 import { Tabs } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import {Link} from 'expo-router'
 
 export default function TabsLayout(){
     return (
-        <Tabs>
+        <Tabs screenOptions={{
+                headerTitleAlign: 'center',
+                headerTintColor: '#FFFFFF',
+                headerLeft: ()=> (
+                    <Link href="/" asChild>
+                        <FontAwesome size={30} name="commenting-o" color="#FFFFFF" style={{marginLeft: 20}} />
+                    </Link>
+                ),
+                headerRight: ()=> (
+                    <Link href="/(profile)" asChild>
+                        <FontAwesome size={30} name="user-o" color="#FFFFFF" style={{marginRight: 20}} />
+                    </Link>
+                )
+        }}>
             <Tabs.Screen 
                 name="index"
                 options={{
