@@ -1,13 +1,16 @@
 import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome'; 
-import {Link} from 'expo-router';
+import { Linking } from 'react-native';
 
 export default function ProfileScreen () {
 
   return (
     <SafeAreaView style={styles.container}>
-
+      {/* Container de informações do perfil */}
       <View style={styles.profileContainer}>
+        {/* Ícone de perfil */}
+        <FontAwesome name="user-circle" size={100} color="#5D9CEC" style={styles.profileIcon} />
+        
         <Image
           source={{ uri: 'https://example.com/avatar.png' }} 
           style={styles.avatar}
@@ -21,20 +24,18 @@ export default function ProfileScreen () {
         </Text>
       </View>
 
+      {/* Container de links sociais */}
       <View style={styles.socialContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com')}>
           <FontAwesome name="facebook" size={30} color="#3b5998" />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com')}>
           <FontAwesome name="instagram" size={30} color="#E1306C" />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => Linking.openURL('mailto:julia@example.com')}>
           <FontAwesome name="envelope" size={30} color="#000" />
         </TouchableOpacity>
-
       </View>
-
-     
     </SafeAreaView>
   );
 };
@@ -48,6 +49,10 @@ const styles = StyleSheet.create({
   profileContainer: {
     alignItems: 'center',
     marginBottom: 20,
+  },
+  profileIcon: {
+    marginBottom: 10,
+    paddingTop:30
   },
   avatar: {
     width: 100,
@@ -65,10 +70,12 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   bio: {
-    fontSize: 16,
+    fontSize: 18,
     textAlign: 'center',
     marginBottom: 20,
     color: '#555',
+    padding:10,
+    paddingVertical:20
   },
   socialContainer: {
     flexDirection: 'row',

@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
         marginBottom: 10
       },
       topButtonContainer: {
-        marginBottom: 20
+        marginBottom: 20,
+        padding:20
       },
       button:{
         width: 300,
@@ -77,6 +78,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
       },
       botButtonContainer:{
-        flexDirection: 'row' 
+        flexDirection: 'row',
+        padding:18 
       }
 })

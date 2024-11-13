@@ -24,7 +24,8 @@ export default function Login(){
             /> 
             <Text style={styles.welcomeText}>Bem-vindo ao Neuroguides.</Text>
           
-            <Input inputname="Entrar:"/>
+            <Input inputname="Entrar:"/> 
+            
             <Input inputname="Senha:"/>
 
             <View style={styles.forgotTextBox}>
