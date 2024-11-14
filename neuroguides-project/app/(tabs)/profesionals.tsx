@@ -4,7 +4,7 @@ import { Tabs } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { MaterialIcons } from '@expo/vector-icons';
 
-// Tipo para os profissionais
+
 type Professional = {
     id: string;
     name: string;
@@ -14,21 +14,18 @@ type Professional = {
     featured: boolean;
 };
 
-// Dados fictícios para a lista de profissionais
 const professionals: Professional[] = [
     { id: '1', name: 'Dr. Robert Carlinhos', specialization: 'Psicólogo', location: 'Manaus', certified: true, featured: true },
     { id: '2', name: 'Dra. Júlia Gomes', specialization: 'Psiquiatra', location: 'São Paulo', certified: true, featured: false },
-    // Adicione mais profissionais conforme necessário
 ];
 
-// Filtros de exemplo
+
 const filters = ["Tudo", "Autismo", "TDAH", "Tourette", "Epilepsia", "Dislexia", "Disgrafia"];
 
 export default function Professionals() {
     const [search, setSearch] = useState('');
     const [selectedFilter, setSelectedFilter] = useState('Tudo');
 
-    // Renderiza cada item da lista
     const renderProfessional = ({ item }: { item: Professional }) => (
         <View style={styles.professionalCard}>
             <View style={styles.professionalHeader}>
@@ -65,7 +62,6 @@ export default function Professionals() {
                 headerStyle: { backgroundColor: '#5D9CEC' },
             }} />
 
-            {/* Barra de busca */}
             <View style={styles.searchContainer}>
                 <MaterialIcons name="search" size={24} color="#5D9CEC" />
                 <TextInput
@@ -96,7 +92,6 @@ export default function Professionals() {
                 Está buscando profissionais para ajudar com seu problema? Queremos ajudá-lo!
             </Text>
             
-            {/* Lista de profissionais */}
             <FlatList
                 data={professionals}
                 renderItem={renderProfessional}
@@ -107,7 +102,6 @@ export default function Professionals() {
     );
 }
 
-// Estilos do componente
 const styles = StyleSheet.create({
     container: {
         height: '100%',

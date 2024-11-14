@@ -74,8 +74,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 20,
     color: '#555',
-    padding:10,
-    paddingVertical:20
+    padding:30,
+    paddingVertical:15,
+    backgroundColor:'#edebe6',
+    borderRadius:20,
+    opacity:0.9,
+    justifyContent:'center',
+    alignContent:'center',
+    verticalAlign:'auto'
   },
   socialContainer: {
     flexDirection: 'row',
