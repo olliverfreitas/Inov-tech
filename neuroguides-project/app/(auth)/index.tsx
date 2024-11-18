@@ -1,11 +1,15 @@
 import {View, SafeAreaView, Image, StyleSheet, TouchableOpacity, Text, TextInput, StatusBar} from 'react-native';
 import {useState} from 'react';
-import {Link} from 'expo-router';
+import {Link, router} from 'expo-router';
 import {Input} from '../../components/input';
 
 export default function Login(){
 
     const [inputText, setInputText] = useState("");
+    
+    function handleLogin(){
+      router.replace('/(tabs)')
+    }
 
   return (
     
@@ -34,11 +38,9 @@ export default function Login(){
                 </Link>
             </View>
 
-            <Link href='/(tabs)' asChild>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={handleLogin}>
                   <Text style={styles.buttonText}>Entrar</Text> 
                 </TouchableOpacity>
-            </Link>
 
             <Link href='/signup' asChild>
                     <Text style={styles.signupTxt}>Cadastre-se aqui.</Text>

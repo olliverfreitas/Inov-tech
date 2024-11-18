@@ -1,11 +1,15 @@
 import {View, SafeAreaView, Image, Text, StyleSheet, StatusBar, TouchableOpacity} from 'react-native';
 
-import {Link} from 'expo-router'
+import {Link, router} from 'expo-router'
 
 export default function Medicalreport(){
 
   function uploadImage(){
     alert('Em construção...')
+  }
+
+  function handleLogin(){
+    router.replace('/(tabs)')
   }
 
   return (
@@ -34,11 +38,9 @@ export default function Medicalreport(){
             style={styles.folderImg} />
           </TouchableOpacity>
 
-          <Link href='/(tabs)' asChild>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Entrar</Text> 
         </TouchableOpacity>
-    </Link>
 
         </View>
       </SafeAreaView>

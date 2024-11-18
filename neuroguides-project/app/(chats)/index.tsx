@@ -5,9 +5,7 @@ type Item = {
     id: string;
     name: string;
     time: string;
-}
-
-type Status={
+    message: string;
     status: string;
 }
 
@@ -45,7 +43,7 @@ const friends = [
   }
 ];
 
-const App = () => {
+export default function Chats(){
   const renderItem = ({ item }: {item: Item}) => (
     <View style={styles.messageContainer}>
       <Text style={styles.name}>{item.name}</Text>
@@ -57,7 +55,7 @@ const App = () => {
     </View>
   );
 
-  const getStatusIcon = ({status}:{status:Status}) => {
+  const getStatusIcon = (status:string) => {
     switch (status) {
       case 'unread':
         return '🔴';
