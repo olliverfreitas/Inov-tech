@@ -38,7 +38,7 @@ export default function Home() {
             <Text style={styles.headerTitle}>PÁGINA INICIAL</Text>
           </View>
         ),
-        headerStyle: { backgroundColor: '#bf911b' },
+        headerStyle: { backgroundColor: '#FF69B4' },
       }} />
 
       <Text style={styles.title}>Bem vindo de volta!</Text>
