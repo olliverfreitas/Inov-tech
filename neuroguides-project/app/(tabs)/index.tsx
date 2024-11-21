@@ -64,7 +64,7 @@ export default function Home() {
       <View style={styles.form}>
         <TextInput
           style={styles.input}
-          placeholder="Seu nome"
+          placeholder="Usuário"
           value={newUser}
           onChangeText={setNewUser}
         />
