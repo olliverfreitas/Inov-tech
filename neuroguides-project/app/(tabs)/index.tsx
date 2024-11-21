@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { SafeAreaView, Text, StyleSheet, View, FlatList, TextInput, Button } from 'react-native';
+import { SafeAreaView, Text, StyleSheet, View, FlatList, TextInput, Button, TouchableOpacity } from 'react-native';
 import { Tabs } from 'expo-router';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import FontAwesome  from '@expo/vector-icons/FontAwesome';
 
 type Post = {
   id: string;
@@ -9,6 +11,10 @@ type Post = {
 };
 
 export default function Home() {
+
+  const [showForm, setShowForm] = useState(false);
+  const [showButton, setShowButton] = useState(true);
+
   const [posts, setPosts] = useState<Post[]>([
     { id: '1', user: 'Alice', message: 'Oi, pessoal! Tudo bem?' },
     { id: '2', user: 'Bob', message: 'Oi, Alice! Tudo ótimo por aqui!' },
@@ -18,6 +24,11 @@ export default function Home() {
 
   const [newUser, setNewUser] = useState('');
   const [newMessage, setNewMessage] = useState('');
+
+  const handleShowForm = ()=>{
+    setShowForm(true);
+    setShowButton(false);
+  }
 
   const handleAddPost = () => {
     if (newUser && newMessage) {
@@ -29,6 +40,8 @@ export default function Home() {
       setPosts([newPost, ...posts]);
       setNewUser('');
       setNewMessage('');
+      setShowForm(false);
+      setShowButton(true);
     }
   };
 
@@ -36,6 +49,10 @@ export default function Home() {
     <View style={styles.postContainer}>
       <Text style={styles.user}>{item.user}</Text>
       <Text style={styles.message}>{item.message}</Text>
+      <View style={styles.postActions}>
+          <MaterialIcons name="insert-comment" size={18} color="#A0A0A0"/>
+          <FontAwesome name="thumbs-up" size={18} color="#A0A0A0" />
+      </View>
     </View>
   );
 
@@ -48,7 +65,7 @@ export default function Home() {
               <Text style={styles.headerTitle}>PÁGINA INICIAL</Text>
             </View>
           ),
-          headerStyle: { backgroundColor: '#bf911b' },
+          headerStyle: { backgroundColor: '#FF69B4' },
         }}
       />
 
@@ -60,23 +77,37 @@ export default function Home() {
         contentContainerStyle={styles.listContainer}
       />
 
-      
+        { showButton && (
+
+        <TouchableOpacity style={styles.buttonForm} onPress={handleShowForm}>
+          <MaterialIcons name="post-add" color="#FFFFFF" size={18} />
+        </TouchableOpacity>
+
+        )}
+
+      { showForm && (
+
       <View style={styles.form}>
-        <TextInput
-          style={styles.input}
-          placeholder="Usuário"
-          value={newUser}
-          onChangeText={setNewUser}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Sua mensagem"
-          value={newMessage}
-          onChangeText={setNewMessage}
-        />
-        <Button title="Postar" onPress={handleAddPost} />
+      <TextInput
+        style={styles.input}
+        placeholder="Usuário"
+        value={newUser}
+        onChangeText={setNewUser}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Sua mensagem"
+        value={newMessage}
+        onChangeText={setNewMessage}
+      />
+      <TouchableOpacity onPress={handleAddPost} style={styles.buttonAddPost}>
+        <Text style={{fontWeight: 'bold', color: '#FFFFFF'}}>Postar</Text>
+      </TouchableOpacity>
       </View>
 
+
+      )
+      }
       
     </SafeAreaView>
   );
@@ -104,7 +135,19 @@ const styles = StyleSheet.create({
     width: '100%',
     marginBottom: 1,
     position:'static'
+  },
+  buttonForm: {
+    backgroundColor: '#FF69B4',
+    width: 50,
+    height: 50,
+    borderRadius: 20,
 
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    position: 'absolute',
+    bottom: 20,
+    right: 20
   },
   input: {
     borderWidth: 1,
@@ -114,6 +157,15 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     width: '100%',
   },
+  buttonAddPost:{
+    width: '100%',
+    height: 40,
+    backgroundColor: '#FF69B4',
+    borderRadius: 8,
+
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   listContainer: {
     width: '100%',
     paddingBottom: 20,
@@ -121,9 +173,13 @@ const styles = StyleSheet.create({
   postContainer: {
     backgroundColor: '#E3F2FD',
     padding: 20,
-    marginVertical: 8,
-    borderRadius: 8,
-    position:'static'
+    position:'static',
+    borderBottomColor: '#dedede',
+    borderBottomWidth: 1,
+    borderTopColor: '#dedede',
+    borderTopWidth: 1,
+    height: 95,
+    width: '100%'
   },
   user: {
     fontSize: 16,
@@ -134,4 +190,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#555',
   },
+  postActions:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 150,
+    margin: 'auto',
+    marginTop: 8,
+    height: 20
+  }
 });

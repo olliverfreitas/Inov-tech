@@ -2,7 +2,7 @@ import {View, SafeAreaView, Text, Image, StyleSheet, StatusBar, TouchableOpacity
 
 import {Link} from 'expo-router';
 
-export default function Profile(){
+export default function ProfileImageScreen(){
 
   function profImg(){
     alert('Perfil em construção...')
@@ -24,16 +24,17 @@ export default function Profile(){
           <Text style={styles.profileText}>Insira uma foto de perfil.</Text>
 
           <TouchableOpacity style={styles.profileImageArea} onPress={profImg}>
-            <Image 
-            source={require('../../assets/account-circle-2.png')}
-            resizeMode='cover'
+
+            <Image
+            source={require('../../assets/user-2.png')} 
             style={styles.profileImg}
-            />
+            />  
+          
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.editArea} onPress={editImg}>
            <Image
-           source={require('../../assets/edit-icon-9.png')} 
+           source={require('../../assets/editprofile.png')} 
            resizeMode='cover'
            style={styles.editImg}
            />
@@ -89,23 +90,20 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     padding: 0,
-    backgroundColor: '#EADDFF',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 75,
     marginBottom: 20
   },
   profileImg:{
-    width: 200, 
-    height: 200
+    width: 150, 
+    height: 150
   },
   editArea:{
     width: 50,
     height: 50,
-    backgroundColor: '#BBBBBB',
     borderRadius: 25,
-    borderWidth: 5,
-    borderColor: '#E6ECE4',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
     position: 'absolute',
@@ -115,8 +113,8 @@ const styles = StyleSheet.create({
 
   },
   editImg:{
-    width: 40,
-    height: 40
+    width: 60,
+    height: 60
   },
   loadCircle:{
     width: 50,

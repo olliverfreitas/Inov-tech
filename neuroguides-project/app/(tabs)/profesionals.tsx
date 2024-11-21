@@ -15,8 +15,10 @@ type Professional = {
 };
 
 const professionals: Professional[] = [
-    { id: '1', name: 'Dr. Robert Carlinhos', specialization: 'Psicólogo', location: 'Manaus', certified: true, featured: true },
-    { id: '2', name: 'Dra. Júlia Gomes', specialization: 'Psiquiatra', location: 'São Paulo', certified: true, featured: false },
+    { id: '1', name: 'Dr. Robert Carlinhos', specialization: ' Psiquiatra', location: 'Manaus', certified: true, featured: true },
+    { id: '2', name: 'Dra. Júlia Gomes', specialization: ' Neurologista', location: 'Manaus/São Paulo', certified: true, featured: false },
+    { id: '3', name: 'Dra. Katarina Coute', specialization: ' Psicóloga', location: 'Noxus/Manaus', certified: true, featured: false },
+    { id: '4', name: 'Dr. Math Demetrius', specialization: ' Terapeuta Ocupacional', location: 'Manaus', certified: true, featured: false },
 ];
 
 
@@ -38,6 +40,10 @@ export default function Professionals() {
             </View>
             <Text style={styles.professionalLocation}>
                 <FontAwesome name="map-marker" size={16} color="#555" /> {item.location}
+            </Text>
+            <Text style={styles.professionalSpecialization}>
+            <FontAwesome name="user-md" size={16} color="#555" />
+                    {item.specialization}
             </Text>
             {item.certified && (
                 <Text style={styles.certified}>
@@ -182,6 +188,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     professionalLocation: {
+        fontSize: 14,
+        color: '#555',
+        marginTop: 4,
+    },
+    professionalSpecialization:{
         fontSize: 14,
         color: '#555',
         marginTop: 4,

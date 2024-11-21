@@ -8,7 +8,7 @@ export default function AuthLayout(){
         }}>
             <Stack.Screen name="index" />
             <Stack.Screen name="signup" />
-            <Stack.Screen name="profile" />
+            <Stack.Screen name="profileimg" />
             <Stack.Screen name="medicalreport" />
         </Stack>
     )

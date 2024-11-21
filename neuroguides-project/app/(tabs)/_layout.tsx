@@ -8,13 +8,13 @@ export default function TabsLayout(){
                 headerTitleAlign: 'center',
                 headerTintColor: '#FFFFFF',
                 headerLeft: ()=> (
-                    <Link href="/" asChild>
+                    <Link href="/(chats)" asChild>
                         <FontAwesome size={30} name="commenting-o" color="#FFFFFF" style={{marginLeft: 20}} /> 
                     </Link> 
                 ),
                 headerRight: ()=> (
-                    <Link href="inbox" asChild>
-                    <FontAwesome size={30} name="commenting-o" color="#FFFFFF" style={{marginRight: 20}} />
+                    <Link href="(profile)" asChild>
+                    <FontAwesome size={30} name="user-o" color="#FFFFFF" style={{marginRight: 20}} />
                 </Link>
                 ),
                 

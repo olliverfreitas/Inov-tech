@@ -1,8 +1,18 @@
 import { SafeAreaView, View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome'; 
 import { Linking } from 'react-native';
+import { useLocalSearchParams } from 'expo-router';
+
+type Query = {
+  // ? para dizer que parametro é opcional
+  userName?: string;
+  userPronouns?: string;
+  userBio?: string;
+}
 
 export default function ProfileScreen () {
+
+  const {userName, userPronouns, userBio} = useLocalSearchParams();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -15,12 +25,10 @@ export default function ProfileScreen () {
           source={{ uri: 'https://example.com/avatar.png' }} 
           style={styles.avatar}
         />
-        <Text style={styles.name}>Julia Moraes</Text>
-        <Text style={styles.pronouns}>ela/dela</Text>
+        <Text style={styles.name}>{userName}</Text>
+        <Text style={styles.pronouns}>{userPronouns}</Text>
         <Text style={styles.bio}>
-          Olá, meu nome é Julia Moraes e sou apaixonada por tecnologia e esporte. 
-          Descobri que tenho TDAH aos 12 anos, e desde então, tenho aprendido a lidar 
-          com os desafios e a aproveitar os benefícios dessa condição...
+          {userBio}
         </Text>
       </View>
 

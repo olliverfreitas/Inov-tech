@@ -42,7 +42,7 @@ import {Link} from 'expo-router';
      
     </View>
 
-    <Link href='/profile' asChild>
+    <Link href='/profileimg' asChild>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Entrar</Text> 
         </TouchableOpacity>
