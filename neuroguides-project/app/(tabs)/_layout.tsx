@@ -8,9 +8,9 @@ export default function TabsLayout(){
                 headerTitleAlign: 'center',
                 headerTintColor: '#FFFFFF',
                 headerLeft: ()=> (
-                    <Link href="/(profile)" asChild>
-                    <FontAwesome size={30} name="user-o" color="#FFFFFF" style={{marginLeft: 20}} />
-                </Link>
+                    <Link href="/" asChild>
+                        <FontAwesome size={30} name="commenting-o" color="#FFFFFF" style={{marginLeft: 20}} /> 
+                    </Link> 
                 ),
                 headerRight: ()=> (
                     <Link href="inbox" asChild>
@@ -24,7 +24,7 @@ export default function TabsLayout(){
                 name="index"
                 options={{
                     title: '',
-                    tabBarIcon: ({color}) => <FontAwesome size={32} name="home" color="black" />
+                    tabBarIcon: ({color}) => <FontAwesome size={32} name="home" color="#FF69B4" />
                 }}
             />
             <Tabs.Screen 
@@ -45,7 +45,7 @@ export default function TabsLayout(){
                 name="profesionals"
                 options={{
                     title: '',
-                    tabBarIcon: ({color}) => <FontAwesome size={32} name="group" color="#5D9CEC" />
+                    tabBarIcon: ({color}) => <FontAwesome size={32} name="user-md" color="#5D9CEC" />
                 }}
             />
            

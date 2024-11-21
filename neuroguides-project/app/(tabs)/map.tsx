@@ -1,4 +1,4 @@
-import {View, SafeAreaView, Text, Pressable, Image, StatusBar, StyleSheet} from 'react-native';
+import {View, SafeAreaView, Text, StyleSheet} from 'react-native';
 import Map, {Callout, Marker} from 'react-native-maps';
 
 import { Tabs } from 'expo-router';
