@@ -55,7 +55,7 @@ export default function Professionals() {
             <Tabs.Screen options={{
                 headerTitle: () => (
                     <View style={styles.header}>
-                        <FontAwesome name="user-md" size={24} color="#FFFFFF" />
+                        
                         <Text style={styles.headerTitle}>PROFISSIONAIS</Text>
                     </View>
                 ),
@@ -75,7 +75,7 @@ export default function Professionals() {
                 </TouchableOpacity>
             </View>
 
-            {/* Filtros */}
+           
             <View style={styles.filterContainer}>
                 {filters.map(filter => (
                     <TouchableOpacity

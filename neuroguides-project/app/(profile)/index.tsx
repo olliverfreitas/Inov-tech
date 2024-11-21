@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
     opacity:0.9,
     justifyContent:'center',
     alignContent:'center',
-    verticalAlign:'auto'
+    verticalAlign:'auto',
+
   },
   socialContainer: {
     flexDirection: 'row',
