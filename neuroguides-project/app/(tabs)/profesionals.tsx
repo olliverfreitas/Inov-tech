@@ -17,8 +17,9 @@ type Professional = {
 const professionals: Professional[] = [
     { id: '1', name: 'Dr. Robert Carlinhos', specialization: ' Psiquiatra', location: 'Manaus', certified: true, featured: true },
     { id: '2', name: 'Dra. Júlia Gomes', specialization: ' Neurologista', location: 'Manaus/São Paulo', certified: true, featured: false },
-    { id: '3', name: 'Dra. Katarina Coute', specialization: ' Psicóloga', location: 'Noxus/Manaus', certified: true, featured: false },
+    { id: '3', name: 'Dra. Katarina Du Couteau', specialization: ' Psicóloga', location: 'Noxus/Manaus', certified: true, featured: false },
     { id: '4', name: 'Dr. Math Demetrius', specialization: ' Terapeuta Ocupacional', location: 'Manaus', certified: true, featured: false },
+
 ];
 
 

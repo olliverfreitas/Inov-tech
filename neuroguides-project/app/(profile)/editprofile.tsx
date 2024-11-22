@@ -45,14 +45,17 @@ export default function EditProfileScreen () {
         <TextInput style={styles.name}
           value={userName}
           onChangeText={text=>setUserName(text)}
+          placeholder='Insira seu nome'
           />
         <TextInput style={styles.pronouns}
           value={userPronouns}
           onChangeText={text=> setUserPronouns(text)}
+          placeholder='Insira seus pronomes'
           />
         <TextInput style={styles.bio}
           value={userBio}
           onChangeText={text=> setUserBio(text)}
+          placeholder='Insira a Bio'
           />
         
 
