@@ -26,8 +26,7 @@ export default function Login(){
             resizeMode='cover'
             style={styles.ngLogo}
             /> 
-            <Text style={styles.welcomeText}>Bem-vindo ao Neuroguides.</Text>
-          
+            <Text style={styles.welcomeText}>Bem-vindo ao Neuroguides!</Text>
             <Input inputname="Entrar:"/> 
             
             <Input inputname="Senha:"/>
@@ -81,12 +80,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   ngLogo:{
-    width: 150,
-    height: 150,
+    width: 180,
+    height: 180,
   },
   welcomeText:{
     fontSize: 18,
-    marginBottom: 20
+    marginBottom: 30
   },
   inputBoxArea:{
     marginBottom: 20

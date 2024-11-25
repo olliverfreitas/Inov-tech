@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
   height: 40,
   borderRadius: 8,
   borderWidth: 2,
-  borderColor: '#d3d3d3'
+  borderColor: '#d3d3d3',
+  padding: 5,
 },
 inputName: {
   fontSize: 16,

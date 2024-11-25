@@ -24,7 +24,7 @@ const locations = [
   },
   {
     latitude: -3.0845250044724994,
-    longitude: 60.069164962228534, 
+    longitude: -60.069164962228534, 
     title: "Juliana Brito - CRP 05/35727",
     address: "Av. Coronel Teixeira 6225",
   },
@@ -65,7 +65,7 @@ const locations = [
     address: "Rua Salvador 120 - Edificio Vieiralves Busin",
   },
   {
-    latitude: 3.099847412947181,
+    latitude: -3.099847412947181,
     longitude: -60.02020207572009,
     title: "Dr. Rockson Pessoa - 20/03665",
     address: "Av. Rio Madeira, 1093 - Nossa Sra. das Gra",
