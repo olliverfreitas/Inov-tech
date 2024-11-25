@@ -1,6 +1,6 @@
-import { StyleSheet, View, Text, TouchableOpacity, SafeAreaView } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, SafeAreaView, Linking } from "react-native"; // adicionei o Linking aq pra redirecionar
 import Map, { Callout, Marker } from "react-native-maps";
-import {Tabs} from 'expo-router'
+import { Tabs } from 'expo-router';
 import { MaterialIcons } from "@expo/vector-icons"; // Para ícones
 
 const locations = [
@@ -24,7 +24,7 @@ const locations = [
   },
   {
     latitude: -3.0845250044724994,
-    longitude: -60.069164962228534, 
+    longitude: 60.069164962228534, 
     title: "Juliana Brito - CRP 05/35727",
     address: "Av. Coronel Teixeira 6225",
   },
@@ -65,7 +65,7 @@ const locations = [
     address: "Rua Salvador 120 - Edificio Vieiralves Busin",
   },
   {
-    latitude: -3.099847412947181,
+    latitude: 3.099847412947181,
     longitude: -60.02020207572009,
     title: "Dr. Rockson Pessoa - 20/03665",
     address: "Av. Rio Madeira, 1093 - Nossa Sra. das Gra",
@@ -319,15 +319,19 @@ const locations = [
   },
 ];
 
-
 export default function App() {
+  // Função para abrir o Google Maps
+  const handleNavigate = (latitude: string, longitude: string) => {
+    const url = `https://www.google.com/maps?q=${latitude},${longitude}`;
+    Linking.openURL(url).catch(err => console.error("Erro ao abrir o Google Maps:", err));
+  };
+
   return (
     <SafeAreaView style={styles.container}>
-
-        <Tabs.Screen options={{
-                headerTitle: 'ATIVIDADES',
-                headerStyle: {backgroundColor: '#67D0A9'}
-            }} />
+      <Tabs.Screen options={{
+        headerTitle: 'ATIVIDADES',
+        headerStyle: { backgroundColor: '#67D0A9' }
+      }} />
 
       {/* Espaço para outras opções */}
 
@@ -349,9 +353,9 @@ export default function App() {
                 latitude: location.latitude,
                 longitude: location.longitude,
               }}
-               pinColor='#03BB85'
+              pinColor='#03BB85'
             >
-              <Callout style={styles.callout}>
+              <Callout onPress={() => handleNavigate(location.latitude.toString(), location.longitude.toString())} style={styles.callout}>
                 <View>
                   <Text style={styles.title}>{location.title}</Text>
                   <Text style={styles.address}>{location.address}</Text>
@@ -361,8 +365,6 @@ export default function App() {
           ))}
         </Map>
       </View>
-
-      
     </SafeAreaView>
   );
 }
@@ -407,6 +409,7 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 18,
+    color: "#007BFF", // Cor pra destacar o link
   },
   address: {
     fontSize: 14,
